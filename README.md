@@ -1,10 +1,8 @@
 # Simple Crypt Library
 This library is specifically designed to explain the XOR fundamentals of encryption. It is NOT for legitimate/production use.This project is for learning purposes for those who do not understand how XOR can encrypt data. If you wish to cipher your information for learning purposes, this simple library/executable is for you.
 
-
-
-
-
+Challenge:
+Try to decrypt the "test.txt" file within the /bin/Release directory.
 
 
 
