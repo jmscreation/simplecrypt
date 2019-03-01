@@ -62,7 +62,7 @@ Crypt::~Crypt(){
 
 bool Crypt::Encrypt(){
     if(badState) return 2;
-    stringstream data;
+    stringstream& data = *(new stringstream());
     file->seekg(0, file->beg);
     data << file->rdbuf(); //file into memory
     file->seekg(0, file->end);
@@ -70,5 +70,6 @@ bool Crypt::Encrypt(){
     file->seekp(0, file->beg);
     const string& sdata = data.str();
     for(unsigned int pos=0; pos < len; ++pos) *file << char(sdata[pos] ^ key[pos % key.size()]); //This is the XOR encryption process
+    delete &data; // free internal buffer
     return 0;
 }
